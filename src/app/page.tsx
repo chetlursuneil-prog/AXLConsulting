@@ -24,7 +24,7 @@ import { services } from '@/data/services';
 import { industries } from '@/data/industries';
 import { featuredCaseStudies } from '@/data/case-studies';
 import { featuredInsights } from '@/data/insights';
-import { founders, teamStats } from '@/data/team';
+import { getTeamData } from '@/lib/get-team';
 
 const iconMap: Record<string, any> = {
   Layers,
@@ -44,6 +44,10 @@ const industryIcons: Record<string, any> = {
 };
 
 export default function HomePage() {
+  const data = getTeamData();
+  const founders = data?.founders ?? [];
+  const teamStats = data?.teamStats ?? [];
+
   return (
     <>
       {/* Hero Section */}

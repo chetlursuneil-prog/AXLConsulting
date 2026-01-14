@@ -73,6 +73,23 @@ export async function POST(request: Request) {
           fs.writeFileSync(dataFile, content, 'utf8');
         }
       }
+
+      // Also update runtime JSON used by client pages
+      try {
+        const jsonPath = path.join(process.cwd(), 'data', 'team.json');
+        if (fs.existsSync(jsonPath)) {
+          const json = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+          if (json && Array.isArray(json.founders)) {
+            const m = json.founders.find((f: any) => f.id === id);
+            if (m) {
+              m.image = imagePath;
+              fs.writeFileSync(jsonPath, JSON.stringify(json, null, 2), 'utf8');
+            }
+          }
+        }
+      } catch (err) {
+        // non-fatal
+      }
     }
 
     return NextResponse.json({ url: `/images/team/${safeName}` });

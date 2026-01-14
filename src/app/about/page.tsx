@@ -12,7 +12,7 @@ import {
   CheckCircle
 } from 'lucide-react';
 import { Button, SectionHeading, Badge, StatsGrid } from '@/components/ui';
-import { founders, teamStats } from '@/data/team';
+import { getTeamData } from '@/lib/get-team';
 import { siteConfig } from '@/data/site-config';
 
 export const metadata: Metadata = {
@@ -21,6 +21,10 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  const data = getTeamData();
+  const founders = data?.founders ?? [];
+  const teamStats = data?.teamStats ?? [];
+
   return (
     <>
       {/* Hero Section */}

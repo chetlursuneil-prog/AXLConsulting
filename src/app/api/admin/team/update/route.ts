@@ -22,7 +22,6 @@ export async function POST(request: Request) {
     if (replaceRegex.test(content)) {
       content = content.replace(replaceRegex, `$1image: '${imageUrl}'`);
       fs.writeFileSync(dataFile, content, 'utf8');
-      return NextResponse.json({ ok: true });
     }
 
     // If there's no existing image property, insert one before the end of the object
@@ -33,8 +32,26 @@ export async function POST(request: Request) {
       const newObj = obj.replace(/\n\s*\}/, `\n    image: '${imageUrl}',\n  }`);
       content = content.replace(obj, newObj);
       fs.writeFileSync(dataFile, content, 'utf8');
-      return NextResponse.json({ ok: true });
     }
+
+    // Also update runtime JSON used by client pages
+    try {
+      const jsonPath = path.join(process.cwd(), 'data', 'team.json');
+      if (fs.existsSync(jsonPath)) {
+        const json = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+        if (json && Array.isArray(json.founders)) {
+          const m = json.founders.find((f: any) => f.id === id);
+          if (m) {
+            m.image = imageUrl;
+            fs.writeFileSync(jsonPath, JSON.stringify(json, null, 2), 'utf8');
+          }
+        }
+      }
+    } catch (err) {
+      // non-fatal
+    }
+
+    return NextResponse.json({ ok: true });
 
     return NextResponse.json({ error: 'member object not found' }, { status: 404 });
   } catch (err) {
