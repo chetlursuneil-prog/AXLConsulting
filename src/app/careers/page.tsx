@@ -89,7 +89,7 @@ export default function CareersPage() {
             <Badge variant="outline" className="mb-6 text-white border-white/30">
               Join Our Team
             </Badge>
-            <h1 className="text-display-md md:text-display-lg mb-6">
+            <h1 className="text-display-md md:text-display-lg text-white mb-6">
               Build the Future of Enterprise Innovation
             </h1>
             <p className="text-xl text-white/80 leading-relaxed max-w-3xl">
@@ -105,9 +105,9 @@ export default function CareersPage() {
       <section className="section-padding">
         <div className="container-custom">
           <SectionHeading
-            eyebrow="Why AXL"
+            eyebrow="Why AXL Consulting"
             title="A Different Kind of Consulting"
-            description="We've built AXL on the belief that consulting should be done differently. Senior expertise, genuine partnership, and a commitment to lasting impact."
+            description="We've built AXL Consulting on the belief that consulting should be done differently. Senior expertise, genuine partnership, and a commitment to lasting impact."
             alignment="center"
           />
           

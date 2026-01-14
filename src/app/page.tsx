@@ -25,6 +25,7 @@ import { industries } from '@/data/industries';
 import { featuredCaseStudies } from '@/data/case-studies';
 import { featuredInsights } from '@/data/insights';
 import { getTeamData } from '@/lib/get-team';
+import type { TeamMember } from '@/data/team';
 
 const iconMap: Record<string, any> = {
   Layers,
@@ -45,7 +46,7 @@ const industryIcons: Record<string, any> = {
 
 export default function HomePage() {
   const data = getTeamData();
-  const founders = data?.founders ?? [];
+  const founders: TeamMember[] = data?.founders ?? [];
   const teamStats = data?.teamStats ?? [];
 
   return (
@@ -69,8 +70,8 @@ export default function HomePage() {
               <span className="text-gradient-gold">AI-Powered</span> Strategy & Execution
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed max-w-3xl">
-              AXL Consulting is a senior-led, AI-first consulting firm delivering measurable 
-              business outcomes through strategy, digital transformation, and intelligent automation.
+              AXL Consulting is a senior leadership–led, AI-first consulting firm that delivers measurable 
+              business outcomes through strategy, digital transformation, intelligent automation, and AI-enabled products.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button href="/contact" variant="white" size="lg" showArrow>
@@ -93,11 +94,11 @@ export default function HomePage() {
                   <div className="text-sm text-gray-400 mt-1">Countries Served</div>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-bold text-white">200+</div>
+                  <div className="text-3xl md:text-4xl font-bold text-white">75+</div>
                   <div className="text-sm text-gray-400 mt-1">Transformations Delivered</div>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-bold text-white">€2B+</div>
+                  <div className="text-3xl md:text-4xl font-bold text-white">€1B+</div>
                   <div className="text-sm text-gray-400 mt-1">Value Created</div>
                 </div>
               </div>
@@ -160,7 +161,7 @@ export default function HomePage() {
                     <p className="text-sm text-gray-400">Measurable ROI on every engagement</p>
                   </div>
                 </div>
-                <div className="space-y-4 mt-8">
+                <div className="space-y-4">
                   <div className="bg-white rounded-2xl p-6 shadow-soft">
                     <Globe className="h-8 w-8 text-primary-600 mb-4" />
                     <h3 className="font-semibold text-navy-900 mb-2">Global Reach</h3>

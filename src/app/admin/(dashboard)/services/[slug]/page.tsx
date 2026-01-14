@@ -22,7 +22,7 @@ export default function AdminServiceView({ params }: { params: { slug: string } 
         <h2 className="font-semibold mb-2">Features</h2>
         <ul className="list-disc pl-5">
           {service.features.map((f, i) => (
-            <li key={i} className="text-sm text-charcoal-700">{f}</li>
+            <li key={i} className="text-sm text-charcoal-700">{f.title}: {f.description}</li>
           ))}
         </ul>
       </section>

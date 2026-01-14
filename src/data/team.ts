@@ -51,7 +51,7 @@ export const founders: TeamMember[] = [
   {
     id: 'suneil-chetlur',
     name: 'Suneil Chetlur',
-    role: 'Co-Founder & Technology Partner',
+    role: 'Co-Founder & Transformation Partner',
     title: 'Co-Founder',
     education: [
       'MBA – Warwick Business School, London',
@@ -59,11 +59,13 @@ export const founders: TeamMember[] = [
     ],
     experience: '20+ years',
     bio: [
-      'Suneil Chetlur is a seasoned technology transformation leader with two decades of experience driving digital innovation across global enterprises. His unique combination of deep technical expertise and business acumen positions him as a bridge between strategic vision and technological execution.',
+      'Suneil Chetlur is a seasoned business transformation leader with two decades of experience driving digital innovation across global enterprises. His unique combination of deep technical expertise and business acumen positions him as a bridge between strategic vision and technological execution.',
       'As Co-Founder of AXL Consulting, Suneil leads the firm\'s technology and AI practice, bringing hands-on experience in enterprise-scale digital transformations. He has designed and governed multi-million-euro programs across telecommunications, financial services, and manufacturing sectors, consistently delivering measurable ROI and operational excellence.',
       'Suneil\'s expertise spans the full spectrum of enterprise technology—from legacy modernization and cloud migration to AI-driven automation and intelligent operations. His approach emphasizes pragmatic innovation, ensuring that emerging technologies deliver tangible business value rather than merely technological novelty.',
     ],
     expertise: [
+      'C-Suite Advisory',
+      'Organizational Transformation',
       'AI & Machine Learning Strategy',
       'BSS/OSS Transformation',
       'Network Automation & Orchestration',
@@ -76,7 +78,8 @@ export const founders: TeamMember[] = [
       'Europe',
       'Middle East',
       'Asia Pacific',
-      'Americas',
+      'North America',
+      'LATAM',
     ],
     linkedin: 'https://www.linkedin.com/in/suneilchetlur/',
     image: '/images/team/Suneilimg.jpg',
@@ -86,6 +89,6 @@ export const founders: TeamMember[] = [
 export const teamStats = [
   { label: 'Combined Experience', value: '50+', suffix: 'Years' },
   { label: 'Countries Operated In', value: '40+', suffix: '' },
-  { label: 'Enterprise Transformations', value: '200+', suffix: '' },
+  { label: 'Enterprise Transformations', value: '75+', suffix: '' },
   { label: 'Client Retention Rate', value: '95', suffix: '%' },
 ];

@@ -102,8 +102,8 @@ export const industries: Industry[] = [
       { metric: '20-35%', description: 'Reduction in time-to-market for new services' },
     ],
     stats: [
-      { value: '15+', label: 'Telco transformations delivered' },
-      { value: '€500M+', label: 'Annual value unlocked' },
+      { value: '25+', label: 'Telco transformations delivered' },
+      { value: '€750M+', label: 'Annual value unlocked' },
       { value: '40+', label: 'Countries served' },
     ],
   },
@@ -170,9 +170,9 @@ export const industries: Industry[] = [
       { metric: '15-25%', description: 'Growth in direct booking revenue' },
     ],
     stats: [
-      { value: '50+', label: 'Hotel properties transformed' },
-      { value: '12M+', label: 'Guest interactions enhanced' },
-      { value: '5', label: 'Continents served' },
+      { value: '20+', label: 'Hotel properties transformed' },
+      { value: '5M+', label: 'Guest interactions enhanced' },
+      { value: '4', label: 'Continents served' },
     ],
   },
   {
@@ -238,9 +238,9 @@ export const industries: Industry[] = [
       { metric: '10-20%', description: 'Reduction in inventory carrying costs' },
     ],
     stats: [
-      { value: '25+', label: 'Manufacturing transformations' },
-      { value: '100+', label: 'Production lines optimized' },
-      { value: '$2B+', label: 'Efficiency gains delivered' },
+      { value: '15+', label: 'Manufacturing transformations' },
+      { value: '50+', label: 'Production lines optimized' },
+      { value: '$500M+', label: 'Efficiency gains delivered' },
     ],
   },
   {
@@ -306,9 +306,9 @@ export const industries: Industry[] = [
       { metric: '25-40%', description: 'Increase in customer lifetime value' },
     ],
     stats: [
-      { value: '40+', label: 'Retail transformations' },
-      { value: '5,000+', label: 'Stores optimized' },
-      { value: '€1B+', label: 'Additional revenue generated' },
+      { value: '15+', label: 'Retail transformations' },
+      { value: '1,500+', label: 'Stores optimized' },
+      { value: '€250M+', label: 'Additional revenue generated' },
     ],
   },
   {
@@ -374,9 +374,9 @@ export const industries: Industry[] = [
       { metric: '25-40%', description: 'Improvement in customer retention' },
     ],
     stats: [
-      { value: '30+', label: 'eCommerce transformations' },
-      { value: '$5B+', label: 'GMV under management' },
-      { value: '100M+', label: 'Customer interactions optimized' },
+      { value: '10+', label: 'eCommerce transformations' },
+      { value: '$1B+', label: 'GMV under management' },
+      { value: '25M+', label: 'Customer interactions optimized' },
     ],
   },
 ];

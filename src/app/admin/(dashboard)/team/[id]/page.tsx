@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { founders } from '@/data/team';
 
 export default function AdminTeamMemberView({ params, searchParams }: { params: { id: string }, searchParams?: { [key: string]: string | string[] | undefined } }) {
-  const member = founders.find((f) => f.id === params.id || f.slug === params.id);
+  const member = founders.find((f) => f.id === params.id);
   if (!member) return <div className="p-8">Team member not found</div>;
 
   return (

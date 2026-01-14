@@ -91,9 +91,16 @@ export default function CaseStudiesPage() {
                     </div>
                   </div>
                   
-                  <Button href={`/case-studies/${caseStudy.slug}`} variant="primary" showArrow>
-                    Read Full Case Study
-                  </Button>
+                  <div className="flex gap-3">
+                    <Button href={`/case-studies/${caseStudy.slug}`} variant="primary" showArrow>
+                      Read Full Case Study
+                    </Button>
+                    {caseStudy.externalUrl && (
+                      <Button href={caseStudy.externalUrl} variant="outline" showArrow>
+                        Visit Site
+                      </Button>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}

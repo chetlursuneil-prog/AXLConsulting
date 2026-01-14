@@ -1,11 +1,11 @@
 export const siteConfig = {
   name: 'AXL Consulting',
-  description: 'Senior-led, AI-first consulting firm delivering strategy, digital, technology, and operational transformation globally.',
-  url: 'https://axlconsulting.com',
+  description: 'Senior leadership–led, AI-first consulting firm delivering strategy, digital, technology, and operational transformation globally.',
+  url: 'https://axlconsulting.io',
   ogImage: '/images/og-image.jpg',
   links: {
-    linkedin: 'https://www.linkedin.com/company/axlconsulting',
-    twitter: 'https://twitter.com/axlconsulting',
+    linkedin: 'https://axlconsulting.io',
+    twitter: 'https://axlconsulting.io',
   },
   contact: {
     email: 'contact@axlconsulting.com',

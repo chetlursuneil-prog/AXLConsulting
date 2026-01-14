@@ -9,6 +9,7 @@ export interface CaseStudy {
   tagline: string;
   summary: string;
   heroImage: string;
+  externalUrl?: string;
   challenge: ChallengeSection;
   approach: ApproachSection;
   aiRole: AIRoleSection;
@@ -73,6 +74,7 @@ export const caseStudies: CaseStudy[] = [
     tagline: 'No-code AI platform transforming restaurant menu management and profitability',
     summary: 'MenuSense is a proprietary AXL Consulting product—a fully AI-driven, no-code platform that revolutionizes how restaurants manage menus, optimize costs, and drive profitability. By combining machine learning with intuitive design, MenuSense enables restaurant operators to make data-driven decisions without technical expertise.',
     heroImage: '/images/case-studies/menusense.jpg',
+    externalUrl: 'https://menusense.io',
     challenge: {
       overview: 'The restaurant industry operates on razor-thin margins, yet most operators lack access to the sophisticated analytics tools used by large chains. Menu engineering—the science of optimizing menu design, pricing, and composition—remains largely manual and intuition-based for independent restaurants and small chains.',
       points: [
@@ -189,7 +191,7 @@ export const caseStudies: CaseStudy[] = [
     clientType: 'Tier-1 Telco',
     industry: 'Telecommunications',
     duration: '24 months',
-    tagline: 'AI-enabled BSS modernization delivering €200M+ in annual value',
+    tagline: 'AI-enabled BSS modernization delivering €100M+ in annual value',
     summary: 'A comprehensive transformation of business and operations support systems for one of Europe\'s leading telecommunications operators. The program modernized legacy billing, CRM, and operations platforms while embedding AI-driven automation throughout the technology stack.',
     heroImage: '/images/case-studies/telecom-bss.jpg',
     challenge: {
@@ -276,7 +278,7 @@ export const caseStudies: CaseStudy[] = [
       overview: 'The transformation delivered transformative results across operational efficiency, customer experience, and business agility. The AI-embedded approach created sustainable competitive advantage and ongoing optimization capabilities.',
       metrics: [
         {
-          value: '€200M+',
+          value: '€100M+',
           label: 'Annual Value',
           description: 'Combined savings and revenue enablement delivered annually',
         },
@@ -318,7 +320,7 @@ export const caseStudies: CaseStudy[] = [
     clientType: 'Fortune 500 Manufacturer',
     industry: 'Manufacturing',
     duration: '18 months',
-    tagline: 'Machine learning delivers $150M in operational savings',
+    tagline: 'Machine learning delivers $75M in operational savings',
     summary: 'A transformative engagement applying AI and machine learning to optimize manufacturing operations for a global industrial company. The program deployed intelligent automation across quality management, maintenance, and supply chain operations.',
     heroImage: '/images/case-studies/manufacturing.jpg',
     challenge: {
@@ -395,7 +397,7 @@ export const caseStudies: CaseStudy[] = [
       overview: 'The AI transformation delivered exceptional results, establishing new performance benchmarks across quality, reliability, and cost efficiency. The program created a foundation for ongoing AI-driven optimization.',
       metrics: [
         {
-          value: '$150M',
+          value: '$75M',
           label: 'Annual Savings',
           description: 'Operational cost reduction achieved through AI optimization',
         },

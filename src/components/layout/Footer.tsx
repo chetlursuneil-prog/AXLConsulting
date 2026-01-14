@@ -19,7 +19,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
-              A senior-led, AI-first consulting firm delivering strategy, digital, 
+              A senior leadership–led, AI-first consulting firm delivering strategy, digital, 
               technology, and operational transformation for enterprises worldwide.
             </p>
             <div className="flex items-center space-x-4">

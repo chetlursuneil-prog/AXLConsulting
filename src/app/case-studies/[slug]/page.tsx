@@ -74,6 +74,18 @@ export default function CaseStudyPage({ params }: Props) {
               <p className="text-xl text-gray-300 leading-relaxed mb-8">
                 {caseStudy.tagline}
               </p>
+              {caseStudy.externalUrl && (
+                <div className="mb-8">
+                  <Button 
+                    href={caseStudy.externalUrl} 
+                    variant="white" 
+                    size="md"
+                    showArrow
+                  >
+                    Visit {caseStudy.client}
+                  </Button>
+                </div>
+              )}
               <div className="flex items-center space-x-6">
                 <div>
                   <p className="text-gray-400 text-sm">Client</p>

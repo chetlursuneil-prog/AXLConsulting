@@ -14,6 +14,7 @@ import {
 import { Button, SectionHeading, Badge, StatsGrid } from '@/components/ui';
 import { getTeamData } from '@/lib/get-team';
 import { siteConfig } from '@/data/site-config';
+import type { TeamMember } from '@/data/team';
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const data = getTeamData();
-  const founders = data?.founders ?? [];
+  const founders: TeamMember[] = data?.founders ?? [];
   const teamStats = data?.teamStats ?? [];
 
   return (
@@ -36,7 +37,7 @@ export default function AboutPage() {
               Senior Expertise. AI Innovation. Global Impact.
             </h1>
             <p className="text-xl text-charcoal-600 leading-relaxed">
-              AXL Consulting is a senior-led, AI-first management consulting firm headquartered 
+              AXL Consulting is a senior leadership–led, AI-first management consulting firm headquartered 
               in Copenhagen, Denmark. We combine decades of enterprise transformation experience 
               with cutting-edge artificial intelligence to deliver measurable business outcomes 
               for clients worldwide.
@@ -235,7 +236,7 @@ export default function AboutPage() {
             stats={[
               { value: '50+', label: 'Years Combined Experience' },
               { value: '40+', label: 'Countries Served' },
-              { value: '200+', label: 'Transformations Delivered' },
+              { value: '75+', label: 'Transformations Delivered' },
               { value: '95%', label: 'Client Retention Rate' },
             ]}
             theme="dark"

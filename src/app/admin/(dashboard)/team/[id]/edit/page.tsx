@@ -6,9 +6,10 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { founders } from '@/data/team';
 
 export default function AdminTeamMemberEdit({ params, searchParams }: { params: { id: string }, searchParams?: { [key: string]: string | string[] | undefined } }) {
-  const member = founders.find((f) => f.id === params.id || f.slug === params.id);
+  const member = founders.find((f) => f.id === params.id);
   if (!member) return <div className="p-8">Team member not found</div>;
 
+  const memberId = member.id; // Capture for closures
   const [preview, setPreview] = useState<string | null>(member.image || null);
   const [uploading, setUploading] = useState(false);
 
@@ -23,7 +24,7 @@ export default function AdminTeamMemberEdit({ params, searchParams }: { params: 
       const res = await fetch('/api/admin/team/photo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: member.id, filename: file.name, data: dataUrl }),
+        body: JSON.stringify({ id: memberId, filename: file.name, data: dataUrl }),
       });
       const json = await res.json();
       if (json?.url) {
@@ -45,7 +46,7 @@ export default function AdminTeamMemberEdit({ params, searchParams }: { params: 
     const res = await fetch('/api/admin/team/update', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id: member.id, imageUrl: preview }),
+      body: JSON.stringify({ id: memberId, imageUrl: preview }),
     });
     const json = await res.json();
     if (json?.ok) {
