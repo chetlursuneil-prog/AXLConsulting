@@ -381,8 +381,15 @@ export default function HomePage() {
                 className="bg-white rounded-2xl p-8 shadow-soft border border-gray-100"
               >
                 <div className="flex items-start space-x-6">
-                  <div className="w-24 h-24 bg-gradient-to-br from-primary-600 to-primary-800 rounded-xl flex items-center justify-center text-white text-3xl font-bold flex-shrink-0">
-                    {founder.name.split(' ').map(n => n[0]).join('')}
+                  <div className="w-24 h-24 rounded-xl overflow-hidden bg-gray-100 flex items-center justify-center flex-shrink-0">
+                    {founder.image ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={founder.image} alt={founder.name} className="object-cover w-full h-full" />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-primary-600 to-primary-800 flex items-center justify-center text-white text-3xl font-bold">
+                        {founder.name.split(' ').map(n => n[0]).join('')}
+                      </div>
+                    )}
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold text-navy-900">{founder.name}</h3>

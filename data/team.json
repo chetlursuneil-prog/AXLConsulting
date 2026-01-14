@@ -33,7 +33,7 @@
         "Latin America"
       ],
       "linkedin": "https://www.linkedin.com/in/axelschmitz/",
-      "image": "/images/team/axel-schmitz.jpg"
+      "image": "/images/team/Axelimg.jpg"
     },
     {
       "id": "suneil-chetlur",
@@ -66,13 +66,29 @@
         "Americas"
       ],
       "linkedin": "https://www.linkedin.com/in/suneilchetlur/",
-      "image": "/images/team/suneil-chetlur.jpg"
+      "image": "/images/team/Suneilimg.jpg"
     }
   ],
   "teamStats": [
-    { "label": "Combined Experience", "value": "50+", "suffix": "Years" },
-    { "label": "Countries Operated In", "value": "40+", "suffix": "" },
-    { "label": "Enterprise Transformations", "value": "200+", "suffix": "" },
-    { "label": "Client Retention Rate", "value": "95", "suffix": "%" }
+    {
+      "label": "Combined Experience",
+      "value": "50+",
+      "suffix": "Years"
+    },
+    {
+      "label": "Countries Operated In",
+      "value": "40+",
+      "suffix": ""
+    },
+    {
+      "label": "Enterprise Transformations",
+      "value": "200+",
+      "suffix": ""
+    },
+    {
+      "label": "Client Retention Rate",
+      "value": "95",
+      "suffix": "%"
+    }
   ]
 }

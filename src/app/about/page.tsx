@@ -144,8 +144,15 @@ export default function AboutPage() {
                     <div className="absolute top-0 right-0 w-64 h-64 bg-primary-600/10 rounded-full blur-3xl"></div>
                     <div className="relative z-10">
                       <div className="flex items-center space-x-6 mb-8">
-                        <div className="w-24 h-24 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center text-3xl font-bold">
-                          {founder.name.split(' ').map(n => n[0]).join('')}
+                        <div className="w-24 h-24 rounded-xl overflow-hidden bg-gray-100 flex items-center justify-center">
+                          {founder.image ? (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img src={founder.image} alt={founder.name} className="object-cover w-full h-full" />
+                          ) : (
+                            <div className="w-full h-full bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-3xl font-bold text-white">
+                              {founder.name.split(' ').map(n => n[0]).join('')}
+                            </div>
+                          )}
                         </div>
                         <div>
                           <h3 className="text-2xl font-bold">{founder.name}</h3>
