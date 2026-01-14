@@ -1,0 +1,31 @@
+# Node
+node_modules/
+.next/
+out/
+.env.local
+.env
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+package-lock.json
+
+# Vercel / Netlify / Build
+.vercel/
+dist/
+build/
+
+# Editor
+.vscode/
+.idea/
+
+# Temp
+tmp/
+*.log
+
+# Mac
+.DS_Store
+
+# Misc
+coverage/

@@ -1,0 +1,101 @@
+export const siteConfig = {
+  name: 'AXL Consulting',
+  description: 'Senior-led, AI-first consulting firm delivering strategy, digital, technology, and operational transformation globally.',
+  url: 'https://axlconsulting.com',
+  ogImage: '/images/og-image.jpg',
+  links: {
+    linkedin: 'https://www.linkedin.com/company/axlconsulting',
+    twitter: 'https://twitter.com/axlconsulting',
+  },
+  contact: {
+    email: 'contact@axlconsulting.com',
+    phone: '+45 70 XX XX XX',
+  },
+  headquarters: {
+    city: 'Copenhagen',
+    country: 'Denmark',
+    address: 'Copenhagen, Denmark',
+  },
+  locations: [
+    {
+      city: 'Copenhagen',
+      country: 'Denmark',
+      type: 'Headquarters',
+      region: 'Europe',
+      isHQ: true,
+      address: 'Nyhavn 63, 1051 Copenhagen K',
+    },
+    {
+      city: 'Hyderabad',
+      country: 'India',
+      type: 'Delivery Center',
+      region: 'Asia Pacific',
+      isHQ: false,
+      address: 'HITEC City, Hyderabad, Telangana',
+    },
+    {
+      city: 'Nice',
+      country: 'France',
+      type: 'Regional Office',
+      region: 'Europe',
+      isHQ: false,
+      address: 'Promenade des Anglais, Nice',
+    },
+    {
+      city: 'Istanbul',
+      country: 'Turkey',
+      type: 'Regional Office',
+      region: 'Europe/MENA',
+      isHQ: false,
+      address: 'Levent Business District, Istanbul',
+    },
+    {
+      city: 'Helsinki',
+      country: 'Finland',
+      type: 'Regional Office',
+      region: 'Nordics',
+      isHQ: false,
+      address: 'Kamppi, Helsinki',
+    },
+  ],
+};
+
+export const navigation = {
+  main: [
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Industries', href: '/industries' },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'AI & Innovation', href: '/ai-innovation' },
+    { name: 'Insights', href: '/insights' },
+    { name: 'Careers', href: '/careers' },
+    { name: 'Contact', href: '/contact' },
+  ],
+  services: [
+    { name: 'Digital Transformation', href: '/services/digital-transformation' },
+    { name: 'Strategic Consulting', href: '/services/strategic-consulting' },
+    { name: 'Technology & Operations', href: '/services/technology-operations' },
+    { name: 'AI & Automation', href: '/services/ai-automation' },
+    { name: 'Program Assurance', href: '/services/program-assurance' },
+    { name: 'Change Management', href: '/services/change-management' },
+  ],
+  industries: [
+    { name: 'Telecommunications', href: '/industries/telecommunications' },
+    { name: 'Hotels & Hospitality', href: '/industries/hospitality' },
+    { name: 'Manufacturing', href: '/industries/manufacturing' },
+    { name: 'Retail', href: '/industries/retail' },
+    { name: 'eCommerce', href: '/industries/ecommerce' },
+  ],
+  company: [
+    { name: 'About Us', href: '/about' },
+    { name: 'Leadership', href: '/about#leadership' },
+    { name: 'Global Presence', href: '/about#locations' },
+    { name: 'Our Approach', href: '/about#approach' },
+    { name: 'Careers', href: '/careers' },
+  ],
+  legal: [
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Terms of Service', href: '/terms' },
+    { name: 'Cookie Policy', href: '/privacy#cookies' },
+  ],
+};
