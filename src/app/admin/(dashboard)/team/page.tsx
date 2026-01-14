@@ -50,8 +50,15 @@ export default function AdminTeamPage() {
           <div key={member.id} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
             <div className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary-600 to-primary-800 rounded-xl flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
-                  {member.name.split(' ').map(n => n[0]).join('')}
+                <div className="w-20 h-20 rounded-xl flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 overflow-hidden bg-gray-100">
+                  {member.image ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={member.image} alt={member.name} className="object-cover w-full h-full" />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-primary-600 to-primary-800 flex items-center justify-center text-white text-2xl font-bold">
+                      {member.name.split(' ').map(n => n[0]).join('')}
+                    </div>
+                  )}
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between">

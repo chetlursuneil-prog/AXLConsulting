@@ -46,7 +46,7 @@ export const founders: TeamMember[] = [
       'Latin America',
     ],
     linkedin: 'https://www.linkedin.com/in/axelschmitz/',
-    image: '/images/team/axel-schmitz.jpg',
+    image: '/images/team/Axelimg.jpg',
   },
   {
     id: 'suneil-chetlur',
