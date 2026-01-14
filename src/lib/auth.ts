@@ -44,19 +44,16 @@ export const authOptions: NextAuthOptions = {
           throw new Error('Please enter email and password');
         }
 
-        // Debug: log incoming email (do not log raw password in production)
-        console.log('[auth] attempt for', credentials.email);
+        // (debug logs removed)
 
         const user = ADMIN_USERS.find((u) => u.email.toLowerCase() === credentials.email.toLowerCase());
 
         if (!user) {
-          console.log('[auth] user not found for', credentials.email);
           throw new Error('Invalid email or password');
         }
 
         // Compare password
         const isPasswordValid = await bcrypt.compare(credentials.password, user.password);
-        console.log('[auth] password check for', credentials.email, '=>', isPasswordValid);
 
         if (!isPasswordValid) {
           throw new Error('Invalid email or password');
