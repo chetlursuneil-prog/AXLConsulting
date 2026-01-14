@@ -79,7 +79,7 @@ export const founders: TeamMember[] = [
       'Americas',
     ],
     linkedin: 'https://www.linkedin.com/in/suneilchetlur/',
-    image: '/images/team/suneil-chetlur.jpg',
+    image: '/images/team/Suneilimg.jpg',
   },
 ];
 

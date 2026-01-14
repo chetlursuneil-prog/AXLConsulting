@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { founders } from '@/data/team';
 
-export default function AdminTeamMemberView({ params }: { params: { id: string } }) {
+export default function AdminTeamMemberView({ params, searchParams }: { params: { id: string }, searchParams?: { [key: string]: string | string[] | undefined } }) {
   const member = founders.find((f) => f.id === params.id || f.slug === params.id);
   if (!member) return <div className="p-8">Team member not found</div>;
 
@@ -23,7 +23,7 @@ export default function AdminTeamMemberView({ params }: { params: { id: string }
           </div>
         </div>
         <div className="flex gap-2">
-          <Link href={`/admin/team/${member.id}/edit`} className="px-3 py-2 bg-primary-600 text-white rounded">Edit</Link>
+          <Link href={`/admin/team/${member.id}/edit${searchParams?.returnTo ? `?returnTo=${encodeURIComponent(String(searchParams.returnTo))}` : ''}`} className="px-3 py-2 bg-primary-600 text-white rounded">Edit</Link>
           <button className="px-3 py-2 bg-red-600 text-white rounded">Delete</button>
         </div>
       </div>

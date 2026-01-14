@@ -98,10 +98,10 @@ export default function AdminTeamPage() {
                   )}
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Link
-                    href={`/admin/team/${member.id}`}
-                    className="p-2 hover:bg-gray-100 rounded-lg text-charcoal-500 hover:text-charcoal-700"
-                  >
+                    <Link
+                      href={`/admin/team/${member.id}?returnTo=/admin/team`}
+                      className="p-2 hover:bg-gray-100 rounded-lg text-charcoal-500 hover:text-charcoal-700"
+                    >
                     <Edit className="h-4 w-4" />
                   </Link>
                   <button className="p-2 hover:bg-red-50 rounded-lg text-charcoal-500 hover:text-red-600">

@@ -2,9 +2,10 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { founders } from '@/data/team';
 
-export default function AdminTeamMemberEdit({ params }: { params: { id: string } }) {
+export default function AdminTeamMemberEdit({ params, searchParams }: { params: { id: string }, searchParams?: { [key: string]: string | string[] | undefined } }) {
   const member = founders.find((f) => f.id === params.id || f.slug === params.id);
   if (!member) return <div className="p-8">Team member not found</div>;
 
@@ -48,8 +49,19 @@ export default function AdminTeamMemberEdit({ params }: { params: { id: string }
     });
     const json = await res.json();
     if (json?.ok) {
-      // Reload so server components re-read updated file
-      window.location.reload();
+      // Navigate back to origin if provided, otherwise to team list
+      try {
+        const sp = useSearchParams();
+        const router = useRouter();
+        const returnTo = sp?.get ? sp.get('returnTo') : (searchParams?.returnTo ? String(searchParams.returnTo) : null);
+        if (returnTo) {
+          router.push(returnTo);
+        } else {
+          router.push('/admin/team');
+        }
+      } catch (err) {
+        window.location.href = '/admin/team';
+      }
     } else {
       alert('Save failed: ' + (json?.error || 'unknown'));
     }
