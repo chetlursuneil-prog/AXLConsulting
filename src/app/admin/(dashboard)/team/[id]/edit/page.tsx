@@ -35,6 +35,26 @@ export default function AdminTeamMemberEdit({ params }: { params: { id: string }
     reader.readAsDataURL(file);
   }
 
+  async function handleSave(e: React.FormEvent) {
+    e.preventDefault();
+    if (!preview) {
+      alert('No image to save');
+      return;
+    }
+    const res = await fetch('/api/admin/team/update', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: member.id, imageUrl: preview }),
+    });
+    const json = await res.json();
+    if (json?.ok) {
+      // Reload so server components re-read updated file
+      window.location.reload();
+    } else {
+      alert('Save failed: ' + (json?.error || 'unknown'));
+    }
+  }
+
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold">Edit: {member.name}</h1>
@@ -67,7 +87,7 @@ export default function AdminTeamMemberEdit({ params }: { params: { id: string }
         </div>
 
         <div className="flex gap-2">
-          <button className="px-4 py-2 bg-primary-600 text-white rounded">Save</button>
+          <button onClick={handleSave} className="px-4 py-2 bg-primary-600 text-white rounded">Save</button>
           <Link href="/admin/team" className="px-4 py-2 border rounded">Cancel</Link>
         </div>
       </form>
