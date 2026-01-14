@@ -59,14 +59,17 @@ export async function POST(request: Request) {
       let content = fs.readFileSync(dataFile, 'utf8');
       const imagePath = `/images/team/${safeName}`;
 
-      const idPattern = `id: '${id}'`;
-      const idx = content.indexOf(idPattern);
-      if (idx !== -1) {
-        const slice = content.slice(idx, idx + 1200);
-        const imageRegex = /image:\s*'[^']*'/m;
-        if (imageRegex.test(slice)) {
-          const replacedSlice = slice.replace(imageRegex, `image: '${imagePath}'`);
-          content = content.slice(0, idx) + replacedSlice + content.slice(idx + slice.length);
+      const replaceRegex = new RegExp("(\\{[\\s\\S]*?id:\\s*'" + id + "'[\\s\\S]*?)image:\\s*'[^']*'", 'm');
+      if (replaceRegex.test(content)) {
+        content = content.replace(replaceRegex, `$1image: '${imagePath}'`);
+        fs.writeFileSync(dataFile, content, 'utf8');
+      } else {
+        const objRegex = new RegExp("(\\{[\\s\\S]*?id:\\s*'" + id + "'[\\s\\S]*?\\})", 'm');
+        const objMatch = content.match(objRegex);
+        if (objMatch) {
+          const obj = objMatch[0];
+          const newObj = obj.replace(/\n\s*\}/, `\n    image: '${imagePath}',\n  }`);
+          content = content.replace(obj, newObj);
           fs.writeFileSync(dataFile, content, 'utf8');
         }
       }

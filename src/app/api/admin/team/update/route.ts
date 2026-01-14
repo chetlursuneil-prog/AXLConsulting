@@ -16,22 +16,27 @@ export async function POST(request: Request) {
     }
 
     let content = fs.readFileSync(dataFile, 'utf8');
-    const idPattern = `id: '${id}'`;
-    const idx = content.indexOf(idPattern);
-    if (idx === -1) {
-      return NextResponse.json({ error: 'Member id not found' }, { status: 404 });
-    }
 
-    const slice = content.slice(idx, idx + 1200);
-    const imageRegex = /image:\s*'[^']*'/m;
-    if (imageRegex.test(slice)) {
-      const replacedSlice = slice.replace(imageRegex, `image: '${imageUrl}'`);
-      content = content.slice(0, idx) + replacedSlice + content.slice(idx + slice.length);
+    // Try to replace image property within the object that contains the id
+    const replaceRegex = new RegExp("(\\{[\\s\\S]*?id:\\s*'" + id + "'[\\s\\S]*?)image:\\s*'[^']*'", 'm');
+    if (replaceRegex.test(content)) {
+      content = content.replace(replaceRegex, `$1image: '${imageUrl}'`);
       fs.writeFileSync(dataFile, content, 'utf8');
       return NextResponse.json({ ok: true });
     }
 
-    return NextResponse.json({ error: 'image field not found' }, { status: 500 });
+    // If there's no existing image property, insert one before the end of the object
+    const objRegex = new RegExp("(\\{[\\s\\S]*?id:\\s*'" + id + "'[\\s\\S]*?\\})", 'm');
+    const objMatch = content.match(objRegex);
+    if (objMatch) {
+      const obj = objMatch[0];
+      const newObj = obj.replace(/\n\s*\}/, `\n    image: '${imageUrl}',\n  }`);
+      content = content.replace(obj, newObj);
+      fs.writeFileSync(dataFile, content, 'utf8');
+      return NextResponse.json({ ok: true });
+    }
+
+    return NextResponse.json({ error: 'member object not found' }, { status: 404 });
   } catch (err) {
     return NextResponse.json({ error: String(err) }, { status: 500 });
   }
