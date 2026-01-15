@@ -40,13 +40,18 @@ export default function CaseStudiesPage() {
               >
                 <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                   <Link href={`/case-studies/${caseStudy.slug}`} className="block group">
-                    <div className="aspect-[4/3] bg-gradient-to-br from-navy-900 to-navy-800 rounded-2xl relative overflow-hidden">
-                      <div className="absolute inset-0 bg-mesh-pattern opacity-20"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-white/10 text-8xl font-bold">
-                          {caseStudy.client.charAt(0)}
-                        </span>
-                      </div>
+                    <div className="aspect-[4/3] rounded-2xl relative overflow-hidden bg-gradient-to-br from-navy-900 to-navy-800">
+                      {caseStudy.heroImage ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={caseStudy.heroImage} alt={caseStudy.client} className="w-full h-full object-cover" />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <span className="text-white/10 text-8xl font-bold">
+                            {caseStudy.client.charAt(0)}
+                          </span>
+                        </div>
+                      )}
+                      <div className="absolute inset-0 bg-mesh-pattern opacity-20 pointer-events-none"></div>
                       <div className="absolute top-6 left-6">
                         <Badge variant="navy">{caseStudy.industry}</Badge>
                       </div>

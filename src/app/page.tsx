@@ -149,29 +149,28 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-4">
-                  <div className="bg-white rounded-2xl p-6 shadow-soft">
-                    <Brain className="h-8 w-8 text-primary-600 mb-4" />
-                    <h3 className="font-semibold text-navy-900 mb-2">AI Strategy</h3>
-                    <p className="text-sm text-charcoal-600">Enterprise AI roadmaps and implementation</p>
-                  </div>
-                  <div className="bg-navy-900 rounded-2xl p-6 text-white">
-                    <TrendingUp className="h-8 w-8 text-primary-400 mb-4" />
-                    <h3 className="font-semibold mb-2">Value Realization</h3>
-                    <p className="text-sm text-gray-400">Measurable ROI on every engagement</p>
-                  </div>
+                <div className="bg-white rounded-2xl p-6 shadow-soft">
+                  <Brain className="h-8 w-8 text-primary-600 mb-4" />
+                  <h3 className="font-semibold text-navy-900 mb-2">AI Strategy</h3>
+                  <p className="text-sm text-charcoal-600">Enterprise AI roadmaps and implementation</p>
                 </div>
-                <div className="space-y-4">
-                  <div className="bg-white rounded-2xl p-6 shadow-soft">
-                    <Globe className="h-8 w-8 text-primary-600 mb-4" />
-                    <h3 className="font-semibold text-navy-900 mb-2">Global Reach</h3>
-                    <p className="text-sm text-charcoal-600">Operations across 5 continents</p>
-                  </div>
-                  <div className="bg-primary-600 rounded-2xl p-6 text-white">
-                    <Zap className="h-8 w-8 text-white mb-4" />
-                    <h3 className="font-semibold mb-2">Rapid Delivery</h3>
-                    <p className="text-sm text-white/80">Accelerated outcomes through automation</p>
-                  </div>
+
+                <div className="bg-white rounded-2xl p-6 shadow-soft">
+                  <Globe className="h-8 w-8 text-primary-600 mb-4" />
+                  <h3 className="font-semibold text-navy-900 mb-2">Global Reach</h3>
+                  <p className="text-sm text-charcoal-600">Operations across 5 continents</p>
+                </div>
+
+                <div className="bg-navy-900 rounded-2xl p-6 text-white">
+                  <TrendingUp className="h-8 w-8 text-primary-400 mb-4" />
+                  <h3 className="font-semibold mb-2">Value Realization</h3>
+                  <p className="text-sm text-gray-400">Measurable ROI on every engagement</p>
+                </div>
+
+                <div className="bg-primary-600 rounded-2xl p-6 text-white">
+                  <Zap className="h-8 w-8 text-white mb-4" />
+                  <h3 className="font-semibold mb-2">Rapid Delivery</h3>
+                  <p className="text-sm text-white/80">Accelerated outcomes through automation</p>
                 </div>
               </div>
             </div>
@@ -328,16 +327,22 @@ export default function HomePage() {
                 href={`/case-studies/${caseStudy.slug}`}
                 className="group bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-lg transition-all duration-300 border border-gray-100"
               >
-                <div className="aspect-[16/9] bg-gradient-to-br from-navy-900 to-navy-800 relative">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-white/20 text-6xl font-bold">
-                      {caseStudy.client.charAt(0)}
-                    </span>
+                <div className="aspect-[16/9] bg-gradient-to-br from-navy-900 to-navy-800 relative overflow-hidden rounded-2xl">
+                    {caseStudy.heroImage ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={caseStudy.heroImage} alt={caseStudy.client} className="w-full h-full object-cover" />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-white/20 text-6xl font-bold">
+                          {caseStudy.client.charAt(0)}
+                        </span>
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-mesh-pattern opacity-20 pointer-events-none"></div>
+                    <div className="absolute top-4 left-4">
+                      <Badge variant="navy">{caseStudy.industry}</Badge>
+                    </div>
                   </div>
-                  <div className="absolute top-4 left-4">
-                    <Badge variant="navy">{caseStudy.industry}</Badge>
-                  </div>
-                </div>
                 <div className="p-8">
                   <h3 className="text-xl font-semibold text-navy-900 mb-3 group-hover:text-primary-600 transition-colors">
                     {caseStudy.title}
