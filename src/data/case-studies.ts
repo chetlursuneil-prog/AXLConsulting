@@ -70,7 +70,7 @@ export const caseStudies: CaseStudy[] = [
     client: 'MenuSense',
     clientType: 'AXL Consulting Product',
     industry: 'Hospitality & Food Service',
-    duration: 'Ongoing Development',
+    duration: 'Production Live',
     tagline: 'No-code AI platform transforming restaurant menu management and profitability',
     summary: 'MenuSense is a proprietary AXL Consulting product—a fully AI-driven, no-code platform that revolutionizes how restaurants manage menus, optimize costs, and drive profitability. By combining machine learning with intuitive design, MenuSense enables restaurant operators to make data-driven decisions without technical expertise.',
     heroImage: '/images/case-studies/menusense.jpg',
