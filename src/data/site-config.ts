@@ -9,7 +9,7 @@ export const siteConfig = {
   },
   contact: {
     email: 'contact@axlconsulting.com',
-    phone: '+45 70 XX XX XX',
+    phone: '+45 9167 1201',
   },
   headquarters: {
     city: 'Copenhagen',
@@ -23,7 +23,7 @@ export const siteConfig = {
       type: 'Headquarters',
       region: 'Europe',
       isHQ: true,
-      address: 'Nyhavn 63, 1051 Copenhagen K',
+      phone: '+45 9167 1201',
     },
     {
       city: 'Hyderabad',
@@ -31,7 +31,7 @@ export const siteConfig = {
       type: 'Delivery Center',
       region: 'Asia Pacific',
       isHQ: false,
-      address: 'HITEC City, Hyderabad, Telangana',
+      phone: '+91 90 307 73464',
     },
     {
       city: 'Nice',
@@ -39,7 +39,7 @@ export const siteConfig = {
       type: 'Regional Office',
       region: 'Europe',
       isHQ: false,
-      address: 'Promenade des Anglais, Nice',
+      phone: '+33 7 45 64 12 59',
     },
     {
       city: 'Istanbul',
@@ -47,7 +47,7 @@ export const siteConfig = {
       type: 'Regional Office',
       region: 'Europe/MENA',
       isHQ: false,
-      address: 'Levent Business District, Istanbul',
+      phone: '+90 535 292 8754',
     },
     {
       city: 'Helsinki',
@@ -55,7 +55,7 @@ export const siteConfig = {
       type: 'Regional Office',
       region: 'Nordics',
       isHQ: false,
-      address: 'Kamppi, Helsinki',
+      phone: '+358 40 489 7108',
     },
   ],
 };

@@ -265,7 +265,7 @@ export default function ContactPage() {
                     {location.isHQ && (
                       <Badge variant="primary" className="text-xs">Headquarters</Badge>
                     )}
-                    <p className="text-sm text-charcoal-600 mt-3">{location.address}</p>
+                    <p className="text-sm text-charcoal-600 mt-3">{(location as any).phone ?? (location as any).address}</p>
                   </div>
                 </div>
               </div>

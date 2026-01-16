@@ -201,7 +201,7 @@ export default function PrivacyPage() {
             <ul>
               <li><strong>Email:</strong> {siteConfig.contact.email}</li>
               <li><strong>Phone:</strong> {siteConfig.contact.phone}</li>
-              <li><strong>Address:</strong> {siteConfig.locations[0].address}, {siteConfig.locations[0].city}, {siteConfig.locations[0].country}</li>
+              <li><strong>Address:</strong> {siteConfig.headquarters.address}, {siteConfig.headquarters.city}, {siteConfig.headquarters.country}</li>
             </ul>
 
           </div>
