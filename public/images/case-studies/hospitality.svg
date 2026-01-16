@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <rect width="100%" height="100%" fill="#051126" />
+  <g opacity="0.12" fill="#ffdea6">
+    <circle cx="420" cy="280" r="140" />
+    <rect x="820" y="220" width="360" height="180" rx="18" />
+    <circle cx="1260" cy="360" r="100" />
+  </g>
+  <g fill="#ffffffcc" font-family="Inter, Arial, sans-serif" font-size="44">
+    <text x="120" y="520">Hospitality</text>
+  </g>
+</svg>

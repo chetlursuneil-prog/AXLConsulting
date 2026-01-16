@@ -73,7 +73,7 @@ export const caseStudies: CaseStudy[] = [
     duration: 'Production Live',
     tagline: 'No-code AI platform transforming restaurant menu management and profitability',
     summary: 'MenuSense is a proprietary AXL Consulting product—a fully AI-driven, no-code platform that revolutionizes how restaurants manage menus, optimize costs, and drive profitability. By combining machine learning with intuitive design, MenuSense enables restaurant operators to make data-driven decisions without technical expertise.',
-    heroImage: '/images/case-studies/menusense.jpg',
+    heroImage: '/images/case-studies/menusense.svg',
     externalUrl: 'https://menusense.io',
     challenge: {
       overview: 'The restaurant industry operates on razor-thin margins, yet most operators lack access to the sophisticated analytics tools used by large chains. Menu engineering—the science of optimizing menu design, pricing, and composition—remains largely manual and intuition-based for independent restaurants and small chains.',
@@ -193,7 +193,7 @@ export const caseStudies: CaseStudy[] = [
     duration: '24 months',
     tagline: 'AI-enabled BSS modernization delivering €100M+ in annual value',
     summary: 'A comprehensive transformation of business and operations support systems for one of Europe\'s leading telecommunications operators. The program modernized legacy billing, CRM, and operations platforms while embedding AI-driven automation throughout the technology stack.',
-    heroImage: '/images/case-studies/telecom-bss.jpg',
+    heroImage: '/images/case-studies/telecom-bss.svg',
     challenge: {
       overview: 'The operator faced a critical inflection point: legacy BSS/OSS systems built over two decades were constraining innovation, driving unsustainable operational costs, and creating friction in the customer experience. With aggressive 5G rollout plans requiring new monetization capabilities, transformation was no longer optional.',
       points: [
@@ -305,11 +305,7 @@ export const caseStudies: CaseStudy[] = [
         'Established foundation for ongoing AI-driven innovation',
       ],
     },
-    testimonial: {
-      quote: 'AXL brought a unique combination of strategic vision and practical delivery expertise. Their AI-first approach didn\'t just modernize our systems—it fundamentally changed how we operate.',
-      author: 'Chief Technology Officer',
-      role: 'Tier-1 European Telco',
-    },
+    
     featured: true,
   },
   {
@@ -322,7 +318,7 @@ export const caseStudies: CaseStudy[] = [
     duration: '18 months',
     tagline: 'Machine learning delivers $75M in operational savings',
     summary: 'A transformative engagement applying AI and machine learning to optimize manufacturing operations for a global industrial company. The program deployed intelligent automation across quality management, maintenance, and supply chain operations.',
-    heroImage: '/images/case-studies/manufacturing.jpg',
+    heroImage: '/images/case-studies/manufacturing.svg',
     challenge: {
       overview: 'Despite decades of lean manufacturing investment, the client faced persistent challenges in operational efficiency. Traditional approaches had reached diminishing returns, while competitors leveraging AI were establishing new performance benchmarks. Leadership recognized the need for a fundamental shift to AI-driven operations.',
       points: [
@@ -424,11 +420,7 @@ export const caseStudies: CaseStudy[] = [
         'Built data foundation enabling future AI applications',
       ],
     },
-    testimonial: {
-      quote: 'The results exceeded our most optimistic projections. AXL helped us see AI not as a technology project but as a fundamental transformation of how we manufacture.',
-      author: 'Chief Operating Officer',
-      role: 'Global Manufacturing Company',
-    },
+    
     featured: true,
   },
   {
@@ -441,7 +433,7 @@ export const caseStudies: CaseStudy[] = [
     duration: '15 months',
     tagline: 'AI-powered guest experience transformation driving 18% RevPAR growth',
     summary: 'A comprehensive digital transformation for a prestigious luxury hotel group, modernizing guest-facing and operational platforms while embedding AI throughout the guest journey. The program delivered significant improvements in guest satisfaction, operational efficiency, and revenue performance.',
-    heroImage: '/images/case-studies/hospitality.jpg',
+    heroImage: '/images/case-studies/hospitality.svg',
     challenge: {
       overview: 'The hotel group\'s legacy technology infrastructure was constraining its ability to deliver the personalized, seamless experiences that luxury guests expect. Fragmented systems, limited data utilization, and manual processes were creating friction in both guest experience and operations.',
       points: [
@@ -539,11 +531,7 @@ export const caseStudies: CaseStudy[] = [
         'Built foundation for continuous experience innovation',
       ],
     },
-    testimonial: {
-      quote: 'AXL understood that technology in luxury hospitality must be invisible to guests while empowering our staff. The results speak for themselves—happier guests, more productive teams, and stronger financial performance.',
-      author: 'Chief Experience Officer',
-      role: 'International Luxury Hotel Brand',
-    },
+    
     featured: true,
   },
 ];

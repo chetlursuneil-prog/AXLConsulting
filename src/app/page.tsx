@@ -328,16 +328,9 @@ export default function HomePage() {
                 className="group bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-lg transition-all duration-300 border border-gray-100"
               >
                 <div className="aspect-[16/9] bg-gradient-to-br from-navy-900 to-navy-800 relative overflow-hidden rounded-2xl">
-                    {caseStudy.heroImage ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={caseStudy.heroImage} alt={caseStudy.client} className="w-full h-full object-cover" />
-                    ) : (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-white/20 text-6xl font-bold">
-                          {caseStudy.client.charAt(0)}
-                        </span>
-                      </div>
-                    )}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-white/20 text-6xl font-bold"></span>
+                    </div>
                     <div className="absolute inset-0 bg-mesh-pattern opacity-20 pointer-events-none"></div>
                     <div className="absolute top-4 left-4">
                       <Badge variant="navy">{caseStudy.industry}</Badge>

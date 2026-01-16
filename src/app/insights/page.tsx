@@ -9,7 +9,14 @@ export const metadata: Metadata = {
   description: 'Thought leadership on AI, digital transformation, and enterprise strategy from AXL Consulting\'s senior partners.',
 };
 
-export default function InsightsPage() {
+export default function InsightsPage({ searchParams }: { searchParams?: { category?: string } }) {
+  const categoryFilter = searchParams?.category || '';
+  const filteredInsights = categoryFilter
+    ? insights.filter((i) => i.category === categoryFilter)
+    : insights;
+  const filteredFeatured = categoryFilter
+    ? featuredInsights.filter((i) => i.category === categoryFilter)
+    : featuredInsights;
   return (
     <>
       {/* Hero Section */}
@@ -40,32 +47,34 @@ export default function InsightsPage() {
           />
           
           <div className="mt-12 grid lg:grid-cols-2 gap-8">
-            {featuredInsights.slice(0, 2).map((insight, index) => (
+            {filteredFeatured.slice(0, 2).map((insight, index) => (
               <Link
                 key={insight.id}
                 href={`/insights/${insight.slug}`}
-                className="group"
+                className="group flex flex-col h-full"
               >
-                <div className={`aspect-[16/9] bg-gradient-to-br from-navy-900 to-navy-800 rounded-2xl mb-6 relative overflow-hidden ${index === 0 ? 'lg:aspect-[16/10]' : ''}`}>
+                <div className="aspect-[16/9] lg:aspect-[16/9] bg-gradient-to-br from-navy-900 to-navy-800 rounded-2xl mb-6 relative overflow-hidden flex-shrink-0">
                   <div className="absolute inset-0 bg-mesh-pattern opacity-20"></div>
                   <div className="absolute bottom-6 left-6 right-6">
                     <Badge variant="primary">{insight.category}</Badge>
                   </div>
                 </div>
-                <h2 className="text-2xl font-bold text-navy-900 mb-3 group-hover:text-primary-600 transition-colors">
-                  {insight.title}
-                </h2>
-                <p className="text-charcoal-600 mb-4 line-clamp-2">
-                  {insight.excerpt}
-                </p>
-                <div className="flex items-center space-x-4 text-sm text-charcoal-500">
-                  <div className="flex items-center space-x-1">
-                    <User className="h-4 w-4" />
-                    <span>{insight.author}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Clock className="h-4 w-4" />
-                    <span>{insight.readTime}</span>
+                <div className="flex-1">
+                  <h2 className="text-2xl font-bold text-navy-900 mb-3 group-hover:text-primary-600 transition-colors">
+                    {insight.title}
+                  </h2>
+                  <p className="text-charcoal-600 mb-4 line-clamp-2">
+                    {insight.excerpt}
+                  </p>
+                  <div className="flex items-center space-x-4 text-sm text-charcoal-500">
+                    <div className="flex items-center space-x-1">
+                      <User className="h-4 w-4" />
+                      <span>{insight.author}</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <Clock className="h-4 w-4" />
+                      <span>{insight.readTime}</span>
+                    </div>
                   </div>
                 </div>
               </Link>
@@ -83,7 +92,7 @@ export default function InsightsPage() {
           />
           
           <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {insights.map((insight) => (
+            {filteredInsights.map((insight) => (
               <Link
                 key={insight.id}
                 href={`/insights/${insight.slug}`}
@@ -121,15 +130,29 @@ export default function InsightsPage() {
             title="Explore by Category"
           />
           
-          <div className="mt-12 flex flex-wrap justify-center gap-3">
-            {insightCategories.map((category) => (
-              <span
-                key={category}
-                className="px-4 py-2 bg-white rounded-full text-sm font-medium text-charcoal-700 border border-gray-200 hover:border-primary-500 hover:text-primary-600 cursor-pointer transition-colors"
-              >
-                {category}
-              </span>
-            ))}
+          <div className="mt-6">
+            {categoryFilter ? (
+              <div className="flex justify-center mb-4">
+                <Link
+                  href="/insights"
+                  className="px-3 py-1 bg-white rounded-full text-sm font-medium text-primary-600 border border-primary-100 hover:bg-primary-50 transition-colors"
+                >
+                  Show all
+                </Link>
+              </div>
+            ) : null}
+
+            <div className="flex flex-wrap justify-center gap-3">
+              {insightCategories.map((category) => (
+                <Link
+                  key={category}
+                  href={`/insights${category ? `?category=${encodeURIComponent(category)}` : ''}`}
+                  className="px-4 py-2 bg-white rounded-full text-sm font-medium text-charcoal-700 border border-gray-200 hover:border-primary-500 hover:text-primary-600 cursor-pointer transition-colors"
+                >
+                  {category}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>

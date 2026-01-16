@@ -42,7 +42,7 @@ The journey from AI pilot to scaled production requires disciplined execution ac
 
 The most successful AI transformations we've observed share a common thread: they begin with clear business outcomes in mind and work backward to the AI capabilities required. Technology selection follows strategy—not the reverse.`,
     author: 'Suneil Chetlur',
-    authorRole: 'Co-Founder & Technology Partner',
+    authorRole: 'Co-Founder & Transformation Partner',
     date: '2026-01-10',
     readTime: '8 min read',
     category: 'AI Strategy',
@@ -74,7 +74,7 @@ The path to zero-touch operations requires transformation across multiple dimens
 
 The transformation to AI-native operations is not a single project but a journey of continuous capability building. Success requires sustained investment in data infrastructure, AI/ML platforms, and organizational change management.`,
     author: 'Suneil Chetlur',
-    authorRole: 'Co-Founder & Technology Partner',
+    authorRole: 'Co-Founder & Transformation Partner',
     date: '2025-12-15',
     readTime: '10 min read',
     category: 'Telecommunications',
@@ -137,14 +137,14 @@ Responsible AI practices create value in multiple ways:
 
 Effective AI governance requires structures and processes across multiple dimensions:
 
-1. **Principles & Policies**: Clear articulation of organizational values and boundaries for AI use
-2. **Risk Assessment**: Systematic evaluation of AI applications for potential harms
-3. **Technical Safeguards**: Bias detection, explainability tools, and monitoring systems
-4. **Organizational Accountability**: Clear ownership and escalation paths for AI decisions
+- **Principles & Policies**: Clear articulation of organizational values and boundaries for AI use
+- **Risk Assessment**: Systematic evaluation of AI applications for potential harms
+- **Technical Safeguards**: Bias detection, explainability tools, and monitoring systems
+- **Organizational Accountability**: Clear ownership and escalation paths for AI decisions
 
 The organizations leading in responsible AI don't treat governance as a constraint on innovation—they've discovered it enables more confident, faster deployment of AI capabilities.`,
     author: 'Suneil Chetlur',
-    authorRole: 'Co-Founder & Technology Partner',
+    authorRole: 'Co-Founder & Transformation Partner',
     date: '2025-11-10',
     readTime: '9 min read',
     category: 'AI Governance',
@@ -219,7 +219,7 @@ Successful LLM deployment requires attention to several critical factors:
 
 The enterprises seeing the greatest returns from LLMs are those approaching implementation with clear use cases, realistic expectations, and robust governance.`,
     author: 'Suneil Chetlur',
-    authorRole: 'Co-Founder & Technology Partner',
+    authorRole: 'Co-Founder & Transformation Partner',
     date: '2025-10-05',
     readTime: '11 min read',
     category: 'AI Technology',

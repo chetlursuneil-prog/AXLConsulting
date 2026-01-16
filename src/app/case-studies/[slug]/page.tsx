@@ -285,9 +285,7 @@ export default function CaseStudyPage({ params }: Props) {
                 <div className="aspect-[16/10] bg-gradient-to-br from-navy-900 to-navy-800 rounded-xl mb-5 relative overflow-hidden">
                   <div className="absolute inset-0 bg-mesh-pattern opacity-20"></div>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-white/10 text-6xl font-bold">
-                      {cs.client.charAt(0)}
-                    </span>
+                    <span className="text-white/10 text-6xl font-bold"></span>
                   </div>
                   <div className="absolute top-4 left-4">
                     <Badge variant="navy">{cs.industry}</Badge>

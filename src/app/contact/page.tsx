@@ -79,7 +79,7 @@ export default function ContactPage() {
             <Badge variant="outline" className="mb-6 text-white border-white/30">
               Get in Touch
             </Badge>
-            <h1 className="text-display-md md:text-display-lg mb-6">
+            <h1 className="text-display-md md:text-display-lg mb-6 text-white">
               Let&apos;s Start a Conversation
             </h1>
             <p className="text-xl text-white/80 leading-relaxed max-w-3xl">

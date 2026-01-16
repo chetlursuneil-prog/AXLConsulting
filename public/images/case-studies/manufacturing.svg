@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <rect width="100%" height="100%" fill="#08121a" />
+  <g opacity="0.14" fill="#9be7ff">
+    <rect x="120" y="150" width="320" height="220" rx="12"/>
+    <rect x="480" y="220" width="420" height="160" rx="12"/>
+    <rect x="940" y="180" width="480" height="280" rx="12"/>
+  </g>
+  <g fill="#ffffffcc" font-family="Inter, Arial, sans-serif" font-size="44">
+    <text x="120" y="520">Manufacturing</text>
+  </g>
+</svg>

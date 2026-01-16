@@ -95,16 +95,47 @@ export default function InsightPage({ params }: Props) {
           <div className="grid lg:grid-cols-4 gap-16">
             <div className="lg:col-span-3">
               <div className="prose prose-lg prose-headings:text-navy-900 prose-p:text-charcoal-700 prose-a:text-primary-600 prose-strong:text-navy-900 max-w-none">
-                {insight.content.split('\n\n').map((paragraph, index) => {
-                  if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
+                {(() => {
+                  const parseInlineBold = (text: string) => {
+                    const parts = text.split(/(\*\*[^*]+\*\*)/g);
+                    return parts.map((part, i) => {
+                      const m = part.match(/^\*\*([\s\S]+)\*\*$/);
+                      if (m) return <strong key={i}>{m[1]}</strong>;
+                      return <span key={i}>{part}</span>;
+                    });
+                  };
+
+                  return insight.content.split('\n\n').map((paragraph, index) => {
+                    // If paragraph contains list lines starting with '- ', render as a numbered list
+                    if (/^\s*-\s+/m.test(paragraph)) {
+                      const lines = paragraph.split(/\r?\n/).filter((l) => /^\s*-\s+/.test(l));
+                      return (
+                        <ol key={index} className="list-decimal ml-6 space-y-2">
+                          {lines.map((line, i) => (
+                            <li key={i}>
+                              {parseInlineBold(line.replace(/^\s*-\s*/, ''))}
+                            </li>
+                          ))}
+                        </ol>
+                      );
+                    }
+
+                    if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
+                      const inner = paragraph.replace(/\*\*/g, '');
+                      return (
+                        <h3 key={index} className="text-xl font-semibold text-navy-900 mt-8 mb-4">
+                          {parseInlineBold(inner)}
+                        </h3>
+                      );
+                    }
+
                     return (
-                      <h3 key={index} className="text-xl font-semibold text-navy-900 mt-8 mb-4">
-                        {paragraph.replace(/\*\*/g, '')}
-                      </h3>
+                      <p key={index}>
+                        {parseInlineBold(paragraph)}
+                      </p>
                     );
-                  }
-                  return <p key={index}>{paragraph}</p>;
-                })}
+                  });
+                })()}
               </div>
               
               {/* Tags */}
